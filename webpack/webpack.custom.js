@@ -13,7 +13,7 @@ const environment = require('./environment');
 const proxyConfig = require('./proxy.conf');
 
 module.exports = async (config, options, targetOptions) => {
-  const languagesHash = await hashElement(path.resolve(__dirname, '../src/main/webapp/i18n'), {
+  const languagesHash = await hashElement(path.resolve(__dirname, '../src/i18n'), {
     algo: 'md5',
     encoding: 'hex',
     files: { include: ['*.json'] },
@@ -100,7 +100,7 @@ module.exports = async (config, options, targetOptions) => {
       from: path.join(path.dirname(require.resolve('axios/package.json')), 'dist/axios.min.js'),
       to: 'swagger-ui/',
     },
-    { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui/' },
+    { from: './src/swagger-ui/', to: 'swagger-ui/' },
     // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
   ];
 
@@ -123,10 +123,10 @@ module.exports = async (config, options, targetOptions) => {
     new MergeJsonWebpackPlugin({
       output: {
         groupBy: [
-          { pattern: './src/main/webapp/i18n/en/*.json', fileName: './i18n/en.json' },
-          { pattern: './src/main/webapp/i18n/ru/*.json', fileName: './i18n/ru.json' },
-          { pattern: './src/main/webapp/i18n/fr/*.json', fileName: './i18n/fr.json' },
-          { pattern: './src/main/webapp/i18n/it/*.json', fileName: './i18n/it.json' },
+          { pattern: './src/i18n/en/*.json', fileName: './i18n/en.json' },
+          { pattern: './src/i18n/ru/*.json', fileName: './i18n/ru.json' },
+          { pattern: './src/i18n/fr/*.json', fileName: './i18n/fr.json' },
+          { pattern: './src/i18n/it/*.json', fileName: './i18n/it.json' },
           // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
         ],
       },

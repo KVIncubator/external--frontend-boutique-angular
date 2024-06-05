@@ -38,7 +38,7 @@ The `npm run` command will list all of the scripts available to run for this pro
 
 JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
 
-The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/webapp/app/app.config.ts`:
+The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/app/app.config.ts`:
 
 ```typescript
 ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
@@ -59,13 +59,13 @@ npm install --save-dev --save-exact @types/leaflet
 ```
 
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Edit [src/main/webapp/app/app.config.ts](src/main/webapp/app/app.config.ts) file:
+Edit [src/app/app.config.ts](src/app/app.config.ts) file:
 
 ```
 import 'leaflet/dist/leaflet.js';
 ```
 
-Edit [src/main/webapp/content/scss/vendor.scss](src/main/webapp/content/scss/vendor.scss) file:
+Edit [src/content/scss/vendor.scss](src/content/scss/vendor.scss) file:
 
 ```
 @import 'leaflet/dist/leaflet.css';
@@ -88,24 +88,18 @@ ng generate component my-component
 will generate few files:
 
 ```
-create src/main/webapp/app/my-component/my-component.component.html
-create src/main/webapp/app/my-component/my-component.component.ts
-update src/main/webapp/app/app.config.ts
+create src/app/my-component/my-component.component.html
+create src/app/my-component/my-component.component.ts
+update src/app/app.config.ts
 ```
 
-## Building for production
-
-## Testing
-
 ### Client tests
-
-Unit tests are run by [Jest][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
 
 ```
 npm test
 ```
 
-UI end-to-end tests are powered by [Cypress][]. They're located in [src/test/javascript/cypress](src/test/javascript/cypress)
+UI end-to-end tests are powered by [Cypress][]. They're located in [cypress](cypress)
 and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`npm run e2e`) in a second one.
 
 #### Lighthouse audits
