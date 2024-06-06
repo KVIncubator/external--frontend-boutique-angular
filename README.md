@@ -106,7 +106,7 @@ and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`
 
 You can execute automated [lighthouse audits][https://developers.google.com/web/tools/lighthouse/] with [cypress audits][https://github.com/mfrachet/cypress-audit] by running `npm run e2e:cypress:audits`.
 You should only run the audits when your application is packaged with the production profile.
-The lighthouse report is created in `target/cypress/lhreport.html`
+The lighthouse report is created in `build/cypress/lhreport.html`
 
 [JHipster Homepage and latest documentation]: https://www.jhipster.tech
 [JHipster 8.5.0 archive]: https://www.jhipster.tech/documentation-archive/v8.5.0
