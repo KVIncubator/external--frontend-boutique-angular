@@ -97,7 +97,7 @@
   "cli": {
     "cache": {
       "enabled": true,
-      "path": "./target/angular/",
+      "path": "./build/angular/",
       "environment": "all"
     },
     "packageManager": "npm",
